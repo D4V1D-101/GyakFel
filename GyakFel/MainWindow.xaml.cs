@@ -27,12 +27,28 @@ namespace GyakFel
             while (!sr.EndOfStream) {
                 Lakossag.Add(new Adatok(sr.ReadLine()));
             }
-            all.Text = Lakossag[1].ToString();//<<-- azért ezt mert ebbe van monjduk Na-s példa is (nem gpt írta :D)
-           
             
-            
+
+            for (int i = 1; i < 41; i++)
+            {
+                listaCombo.Items.Add(i);
+            }
         }
 
+        private void Feladatok(object sender, SelectionChangedEventArgs e)
+        {
+            int selectedNumber = (int)listaCombo.SelectedItem;
 
+
+
+
+           
+        }
+        private void f1()
+        {
+            var max = Lakossag.MaxBy(l => l.Netto);
+            
+
+        }
     }
 }

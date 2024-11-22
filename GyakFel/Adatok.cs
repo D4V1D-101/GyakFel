@@ -4,6 +4,8 @@ namespace GyakFel
 {
     internal class Adatok
     {
+        private int age;
+
         public Adatok(string r)
         {
             // Példa: 2; nő; 1990; 65; 170; nem; német; szász ; Baden - Württemberg; 40000; Realschule; liberális; igen; 30; NA
@@ -15,7 +17,7 @@ namespace GyakFel
             Height = int.Parse(v[4]);
             Smoking = v[5] == "igen";
             Nemzetiseg = v[6];
-            Nepcsoport = v[7] != "német" ? null : v[7]; 
+             Nepcsoport = v[7].Trim().ToLower() == "német" ? null : v[7].Trim();
             Tartomany = v[8];
             Netto = int.Parse(v[9]);
             Vegzettseg = v[10];
@@ -39,11 +41,33 @@ namespace GyakFel
         public string PolitikaiNezet { get; set; }
         public bool AktivSzavazo { get; set; }
         public int? SorFogyasztas { get; set; } 
-        public int? KrumpliFogyasztas { get; set; }  
+        public int? KrumpliFogyasztas { get; set; }
 
-        public override string ToString()
-        {
-            return $"[{Id}] {Gender} {BirthDate} {Weight} {Height} {(Smoking ? "igen" : "nem")} {Nemzetiseg} {Nepcsoport} {Tartomany} {Netto} {Vegzettseg} {PolitikaiNezet} {(AktivSzavazo ? "igen" : "nem")} {SorFogyasztas?.ToString() ?? "NA"} {KrumpliFogyasztas?.ToString() ?? "NA"}";
+        public int Age()
+        { 
+         return DateTime.Now.Year - BirthDate;
         }
+        public int nettoHavi()
+        {
+            return Netto / 12;
+        }
+
+        public string ToString(bool x)
+        {
+
+           
+
+            if (x)
+            {
+   
+                return $"{Id}\t{Gender}\t{BirthDate}\t{Weight}\t{Height}";
+            }
+            else
+            {
+              
+                return $"{Id}\t{Nemzetiseg}\t{Nepcsoport}\t{Tartomany}\t{Netto}";
+            }
+        }
+
     }
 }
