@@ -17,7 +17,7 @@
                 <DataGridTextColumn Header="Születési év" Binding="{Binding BirthDate}" />
                 <DataGridTextColumn Header="Súly" Binding="{Binding Weight}" />
                 <DataGridTextColumn Header="Magasság" Binding="{Binding Height}" />
-                <DataGridTextColumn Header="Dohányzik" Binding="{Binding Somking}" />
+                <DataGridTextColumn Header="Dohányzik" Binding="{Binding SmokingDisplay}" />
                 <DataGridTextColumn Header="Nemzetiség" Binding="{Binding Nemzetiseg}" />
                 <DataGridTextColumn Header="Népcsoport" Binding="{Binding Nepcsoport}" />
                 <DataGridTextColumn Header="Tartomány" Binding="{Binding Tartomany}" />
@@ -29,7 +29,7 @@
                 <DataGridTextColumn Header="Évi krumplifogyasztás" Binding="{Binding KrumpliFogyasztas}" />
             </DataGrid.Columns>
         </DataGrid>
-        <ListBox x:Name="MegoldasLista" HorizontalAlignment="Left" Height="172" Margin="10,552,0,0" VerticalAlignment="Top" Width="426"/>
+        <ListBox x:Name="MegoldasLista" HorizontalAlignment="Left" Height="156" Margin="10,552,0,0" VerticalAlignment="Top" Width="426"/>
         <Label Content="Listás megoldás:" HorizontalAlignment="Left" Height="26" Margin="10,522,0,0" VerticalAlignment="Top" Width="344" FontWeight="Bold"/>
         <Label x:Name="MegoldasMondatban" Content="" HorizontalAlignment="Left" Margin="354,70,0,0" VerticalAlignment="Top" Width="621"/>
 

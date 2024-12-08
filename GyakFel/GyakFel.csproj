@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="C:\Users\rigod\Pictures\bevolkerung.txt" Link="bevolkerung.txt" />
+  </ItemGroup>
+
 </Project>

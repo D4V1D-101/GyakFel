@@ -17,14 +17,14 @@ namespace GyakFel
             Height = int.Parse(v[4]);
             Smoking = v[5] == "igen";
             Nemzetiseg = v[6];
-             Nepcsoport = v[7].Trim().ToLower() == "német" ? null : v[7].Trim();
+            Nepcsoport = v[7].Trim().ToLower() == "német" ? null : v[7].Trim();
             Tartomany = v[8];
             Netto = int.Parse(v[9]);
             Vegzettseg = v[10];
             PolitikaiNezet = v[11];
             AktivSzavazo = v[12] == "igen";
-            SorFogyasztas = v[13] == "NA" ? (int?)null : int.Parse(v[13]);
-            KrumpliFogyasztas = v[14] == "NA" ? (int?)null : int.Parse(v[14]);
+            SorFogyasztas = v[13] == "NA" ? 0 : int.Parse(v[13]);
+            KrumpliFogyasztas = v[14] == "NA" ? 0 : int.Parse(v[14]);
         }
 
         public int Id { get; set; }
@@ -40,22 +40,17 @@ namespace GyakFel
         public string Vegzettseg { get; set; }
         public string PolitikaiNezet { get; set; }
         public bool AktivSzavazo { get; set; }
-        public int? SorFogyasztas { get; set; } 
-        public int? KrumpliFogyasztas { get; set; }
-
-        public int Age()
-        { 
-         return DateTime.Now.Year - BirthDate;
-        }
-        public int nettoHavi()
-        {
-            return Netto / 12;
-        }
+        public int SorFogyasztas { get; set; } 
+        public int KrumpliFogyasztas { get; set; }
+        public string SmokingDisplay => Smoking ? "igen" : "nem";
+        public int Age() => DateTime.Now.Year - BirthDate;
+        public double nettoHavi() => Netto / 12;
 
         public string ToString(bool x)
         {
 
-           
+   
+            
 
             if (x)
             {
